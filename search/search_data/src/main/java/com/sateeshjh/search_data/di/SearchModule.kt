@@ -8,16 +8,17 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
 object SearchModule {
 
     @Provides
+    @Singleton
     fun provideSearchApi(retrofit: Retrofit): SearchApi {
         return retrofit.create(SearchApi::class.java)
     }
-
     @Provides
     fun provideSearchRepo(searchApi: SearchApi): SearchRepository {
         return SearchRepositoryImpl(searchApi)

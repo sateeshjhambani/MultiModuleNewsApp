@@ -24,21 +24,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     dataBinding {
         enabled = true
     }
 }
 
 dependencies {
-
     implementation project(":search:search_presentation")
+    implementation project(":search:search_domain")
+    implementation project(":search:search_data")
     implementation project(":news:news_presentation")
     implementation project(":common:common_utils")
     implementation project(":news:news_domain")

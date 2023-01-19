@@ -4,7 +4,7 @@ import android.app.Activity
 import com.example.common_utils.Activities
 import com.example.common_utils.Navigator
 import com.sateeshjh.news_presentation.GoToNewsActivity
-import com.sateeshjh.search_presentation.GoToSearchActivity
+import com.vision.andorid.search_presentation.GoToSearchActivity
 
 class DefaultNavigator: Navigator.Provider {
 

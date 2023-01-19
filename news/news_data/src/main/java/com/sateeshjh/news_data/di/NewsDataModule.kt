@@ -9,16 +9,19 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
 object NewsDataModule {
 
     @Provides
+    @Singleton
     fun provideNewsApiService(retrofit: Retrofit): NewsApiService {
         return retrofit.create(NewsApiService::class.java)
     }
     @Provides
+    @Singleton
     fun provideNewsRepository(newsApiService: NewsApiService, newsDAO: NewsDAO): NewsRepository{
         return NewsRepositoryImpl(newsApiService, newsDAO)
     }
